@@ -1,0 +1,92 @@
+<html>
+<head>
+	<title>SimplyPresent</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<script language='javascript' type="text/javascript" src='//code.jquery.com/jquery-2.0.3.min.js'></script>
+	<script language='javascript' type="text/javascript" src='config.js'></script>
+	<script language='javascript' type="text/javascript" src='../cloud/simply-present/global.js'></script>
+	
+	<link href='../cloud/simply-present/Byword.css' rel='stylesheet' type='text/css' />
+	<link href='../cloud/simply-present/global.css' rel='stylesheet' type='text/css' />
+	<link href='../cloud/simply-present/text.css' rel='stylesheet' type='text/css' />
+
+	<script type="text/javascript">
+	  WebFontConfig = {
+	    google: { families: [ 'Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700:latin,latin-ext' ] }
+	  };
+	  (function() {
+	    var wf = document.createElement('script');
+	    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+	    wf.type = 'text/javascript';
+	    wf.async = 'true';
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(wf, s);
+	  })(); </script>
+
+
+	<script type="text/javascript">
+
+		$.get(sp.config.srcDir,function(result){
+			fl = $(".fileList ul");
+			$(result).find("a").each(function(){
+				var href = $(this).attr("href");
+				var name = "";
+				var subname = "";
+
+				if (has(get_file_extension(href),sp.config.extensions)){
+					console.debug(href);
+
+					results = try_urls(href);
+					href = results.href;
+					sp.lasttest = results;
+					if (!href) return;
+
+
+				  	var headers = parse_md_headers(results.results);
+				  	if (headers["shorttitle"] != null) name += headers["shorttitle"] + " (";
+				  	if (headers["title"] != null) name += headers["title"];
+				  	if (headers.subtitle != null) name += " / " + headers.subtitle;
+				  	if (headers["shorttitle"] != null) name += ")";
+
+				  	if (headers["author"] != null) subname += "By: " + headers["author"];
+				  	if (headers["company"] != null) subname += " @ " + headers["company"];
+
+				  	if (!name) name = get_file_name($(this).html());
+
+
+					sp.lastheaders = headers;
+
+					fl.append(
+						$("<li>").append(
+								$("<span>").attr("href",href).html(name),
+								$("<br>"),
+								$("<span>").addClass("footnote").append(
+									$("<a>").attr("href","presentation.html#" + href).html("Presentation"),
+									$("<span>").html(" | "),
+									$("<a>").attr("href","document.html#" + href).html("Document"),
+									$("<span>").html(" | " + subname)
+								)
+							)
+						);
+				}
+			});
+			$(".loading").hide();
+		});
+
+	</script>
+
+</head>
+<body>
+	<h1>Welcome!</h1>
+	<p>I have a number of files that I have here to share with you.  Take a moment to check them out.</p>
+
+	<div class="loading">One moment while I pull them up…</div>
+
+	<div class="fileList">
+		<ul></ul>
+	</div>
+</body>
+</html>

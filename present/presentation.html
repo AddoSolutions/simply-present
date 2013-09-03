@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>Presentation</title>
+
+
+    <script language='javascript' type="text/javascript" src='../cloud/reveal.js/lib/js/head.min.js'></script>
+    <script language='javascript' type="text/javascript" src='//code.jquery.com/jquery-2.0.3.min.js'></script>
+    <script language='javascript' type="text/javascript" src='config.js'></script>
+    <script language='javascript' type="text/javascript" src='../cloud/simply-present/global.js'></script>
+
+
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="../cloud/reveal.js/css/reveal.min.css">
+    <link rel="stylesheet" href="../cloud/reveal.js/css/print/paper.css">
+    <link rel="stylesheet" href="../cloud/reveal.js/css/print/pdf.css">
+    <link rel="stylesheet" href="../cloud/reveal.js/css/theme/simple.css" id="theme">
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    
+</head>
+<body class="body">
+    <div class="reveal">
+        <div class="slides">
+            <section class="md" data-markdown="" data-separator="^# "  data-notes="^Note:" data-charset="utf-8"></section>
+        </div>
+    </div>
+
+    <script language='javascript' type="text/javascript" src='../cloud/reveal.js/js/reveal.js'></script>
+    <script type="text/javascript">
+        $(".md").attr("data-markdown",location.hash.substr(1));
+
+        Reveal.initialize({
+            //theme: Reveal.getQueryHash().theme || 'default', // default/neon/beige
+            //transition: 'none' /* Reveal.getQueryHash().transition || 'linear' // default/cube/page/concave/linear(2d)*/
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+                { src: sp.config.cloudDir + 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+                // Interpret Markdown in <section> elements
+                { src: sp.config.cloudDir + 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: sp.config.cloudDir + 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+                // Syntax highlight for <code> elements
+                { src: sp.config.cloudDir + 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+                // Zoom in and out with Alt+click
+                { src: sp.config.cloudDir + 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+                // Speaker notes
+                { src: sp.config.cloudDir + 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+                // Remote control your reveal.js presentation using a touch device
+                //{ src: sp.config.cloudDir + 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+                // MathJax
+                { src: sp.config.cloudDir + 'reveal.js/plugin/math/math.js', async: true }
+            ]
+
+        });
+        
+    </script>
+</body>
+</html>

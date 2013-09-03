@@ -1,0 +1,56 @@
+author:Michael L. Collard, Ph.D.
+company:Department of Computer Science, The University of Akron
+title:iOS Development
+subtitle:iOS Devices
+shorttitle:Devices
+slide_footer:3460:489 iOS Development
+slide_subfooter:Fall 2013
+
+# Devices and Applications
+* Mainframe
+* Desktop
+* Web-based
+* Laptop
+* Smartphone/iPad
+
+# iOS Devices
+* [iPod](http://en.wikipedia.org/wiki/List_of_iOS_devices#iPod_Touch)
+* [iPhone](http://en.wikipedia.org/wiki/List_of_iOS_devices#iPhone)
+* [iPad](http://en.wikipedia.org/wiki/List_of_iOS_devices#iPad)
+* [iPad Mini](http://en.wikipedia.org/wiki/List_of_iOS_devices#iPad_Mini)
+* [Apple TV 2nd++ (?)](http://en.wikipedia.org/wiki/List_of_iOS_devices#Apple_TV_.282nd_generation_onwards.29)
+* iOS in the Car
+
+# Screens
+* Small
+	* 3.5 inch, 960 x 640 px at 326 ppi, 3:2 aspect ratio (iPhone 4, 4s, iPod Touch 4)
+	* **4 inch, 1,136 x 640 px at 326 ppi, 71:40 aspect ratio (iPhone 5, iPod Touch 5)**
+* Large
+	* 9.7 inch, 1,024 x 768 px at 132 ppi, 4:3 aspect ratio (iPad 1, 2)
+	* **9.7 inch, 2,048 x 1,536 px at 264 ppi, 4:3 aspect ratio (iPad 3, 4)**
+	* **7.9 inch, 1,024 x 768 px at 163 ppi, 4:3 aspect ratio (iPad Mini)**
+
+# Capacities
+## Storage
+* 8, 16, 32, 64, 128 GB
+
+## Memory
+* 256 MB, 512 MB, 1 GB
+
+# Other Features
+* Speaker
+* Microphone
+* Cellular
+* GPS
+* Digital compass
+* Bluetooth 4
+
+# Sensors
+* Display - 3 sensors
+* Movement - 3 sensors
+* Proximity sensor
+* Ambient light
+* Accelrometer - 3-axis
+* Magnetometer - strength, direction of magnetic fields
+* Gyroscopic sensor
+* Fingerprint Sensor (Rumoured)
